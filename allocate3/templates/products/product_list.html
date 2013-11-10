@@ -7,17 +7,19 @@
 
 {% block content %}
 
+{% include 'includes/_search.html' %}
+
 <div class="row" ng-controller="ProductListController">
     <div class="wide column">
-        <table class="ui table segment">
+        <table class="ui small table segment">
             <thead>
                 <th>Code</th>
                 <th>Name</th>
                 <th>Weight</th>
             </thead>
             <tbody>
-                <tr data-ng-repeat="product in products">
-                    <td><[ product.code ]></td>
+                <tr data-ng-repeat="product in products | filter:query">
+                    <td><a href="<[ product.absolute_url ]>"><[ product.code ]></a></td>
                     <td><[ product.name ]></td>
                     <td><[ product.weight ]></td>
                 </tr>

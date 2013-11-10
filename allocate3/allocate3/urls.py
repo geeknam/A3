@@ -27,6 +27,8 @@ urlpatterns = patterns('',
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
     url(r'^products/', include('products.urls')),
+    url(r'^suppliers/', include('suppliers.urls')),
+
     # url(r'^home/$', 'core.views.home'),
     # (r'^comments/', include('django.contrib.comments.urls')),
     (r'^500/', TemplateView.as_view(template_name='500.html')),

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_head %}
+<script src="{% static 'js/suppliers/supplier_list.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+{% include 'includes/_search.html' %}
+
+<div class="row" ng-controller="SupplierListController">
+    <div class="wide column">
+        <table class="ui small table segment">
+            <thead>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Score</th>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="supplier in suppliers | filter:query">
+                    <td>
+                        <div class="ui circular label" style="background-color:<[ supplier.colour ]>"></div>
+                        <[ supplier.name ]>
+                    </td>
+                    <td><[ supplier.email ]></td>
+                    <td><[ supplier.score ]></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

@@ -24,4 +24,4 @@ class ProductViewSet(viewsets.ModelViewSet):
     serializer_class = ProductSerializer
     filter_backends = (filters.SearchFilter,)
     search_fields = ('code', 'name')
-    paginate_by = 10
+    paginate_by = 50

@@ -26,29 +26,26 @@
     </div>
 
     <div class="ui large inverted vertical floating sidebar menu">
-        <a class="active item">
+        <a class="active item" href="/">
             Home
         </a>
-        <a class="item">
-            Orders
-        </a>
-        <a class="item">
+        <a class="item" href="/products/">
             Products
         </a>
-        <a class="item">
+        <a class="item" href="/suppliers/">
             Suppliers
         </a>
+        <div class="ui dropdown item">
+            <i class="add icon"></i> Orders
+            <div class="menu">
+                <a class="item">Create New Manifest</a>
+                <a class="item">View All Manifests</a>
+                <a class="item">Unshipped Orders</a>
+            </div>
+        </div>
         <a class="item">
             Payments  <span class="ui label">12</span>
         </a>
-        <div class="ui dropdown item">
-            <i class="add icon"></i> New
-            <div class="menu">
-                <a class="item"><i class="rss icon"></i> Feed</a>
-                <a class="item"><i class="tag icon"></i> Tag</a>
-                <a class="item"><i class="folder icon"></i> Group</a>
-            </div>
-        </div>
     </div>
 
     <div class="main container">
@@ -60,27 +57,6 @@
                 </div>
             </div>
 
-<!--             <div class="row">
-                <div class="wide column">
-
-                    <div class="ui breadcrumb">
-                      <a class="section">Home</a>
-                      <i class="right arrow icon divider"></i>
-                      <a class="active section">Remaining orders</a>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="wide column">
-                    <div class="ui four item tabular menu">
-                        <a class="active item">Requiring pricing</a>
-                        <a class="item">Remaining orders</a>
-                        <a class="item">Confirmed orders</a>
-                    </div>
-                </div>
-            </div> -->
             {% block content %}
             {% endblock %}
         </div>

@@ -8,3 +8,6 @@ class ProductSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Product
         filter_fields = ('code',)
+        exclude = (
+            'allowed_suppliers',
+        )
