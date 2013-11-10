@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_head %}
+<script src="{% static 'js/products/product_list.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+<div class="row" ng-controller="ProductListController">
+    <div class="wide column">
+        <table class="ui table segment">
+            <thead>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Weight</th>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="product in products">
+                    <td><[ product.code ]></td>
+                    <td><[ product.name ]></td>
+                    <td><[ product.weight ]></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

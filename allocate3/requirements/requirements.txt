@@ -1,0 +1,30 @@
+Django==1.5.5
+South==0.8.2
+
+# Database
+psycopg2==2.4.5
+
+# API
+djangorestframework
+django-filter
+
+# Celery
+celery==3.0.11
+django-celery==3.0.11
+kombu==2.4.7
+django-kombu==0.9.4
+
+
+# Redis
+redis==2.7.1
+redisco==0.1.4
+
+
+
+django-extensions
+django-countries==1.2
+
+
+# Development
+django=debug-toolbar
+django-nose
