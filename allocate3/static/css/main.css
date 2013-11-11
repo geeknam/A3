@@ -7,12 +7,20 @@ body {
   font-size: 15px;
   height: 100%;
 }
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: #08c;
+}
 
 body {
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   background: #FFFFFF;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   color: #555555;
   text-rendering: optimizeLegibility;
   min-width: 320px;
@@ -37,8 +45,11 @@ body {
     margin: auto;
 }
 
+.logo {
+    padding: 10px 0 !important;
+}
+
 .logo img {
-    padding: 10px 0;
     width: 150px;
 }
 

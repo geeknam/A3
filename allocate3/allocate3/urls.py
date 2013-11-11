@@ -28,6 +28,8 @@ urlpatterns = patterns('',
 
     url(r'^products/', include('products.urls')),
     url(r'^suppliers/', include('suppliers.urls')),
+    url(r'^orders/', include('orders.urls')),
+
 
     # url(r'^home/$', 'core.views.home'),
     # (r'^comments/', include('django.contrib.comments.urls')),

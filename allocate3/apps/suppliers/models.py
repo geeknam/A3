@@ -46,9 +46,11 @@ class Supplier(SlugUniqueMixin, AddressMixin, models.Model):
         score_price = price / score    # calculate score price
         return score_price.quantize(Decimal(10) ** -2)  # return rounded to 2 decimals
 
-    # def get_absolute_url(self):
-    #     return reverse('suppliers.views.supplier_detail', args=[self.slug])
-
+    @models.permalink
+    def get_absolute_url(self):
+        return ('supplier-detail', (), {
+            'slug': self.slug,
+        })
 
 # @receiver(post_save, sender=Supplier)
 # def allow_supplier_ship_all_products(instance=None, created=False, **kwargs):

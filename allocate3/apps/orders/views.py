@@ -1,7 +1,11 @@
+from django.views.generic import DetailView, TemplateView
 from rest_framework import viewsets, filters
 
 from .models import Manifest, Invoice, InvoiceLine
 from .serializers import ManifestSerializer, InvoiceSerializer, InvoiceLineSerializer
+
+class ManifestListView(TemplateView):
+    template_name = 'orders/manifest_list.html'
 
 
 class ManifestViewSet(viewsets.ModelViewSet):

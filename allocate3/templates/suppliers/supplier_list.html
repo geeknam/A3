@@ -2,14 +2,14 @@
 {% load static %}
 
 {% block extra_head %}
-<script src="{% static 'js/suppliers/supplier_list.js' %}"></script>
+<script src="{% static 'js/' %}{{ APP_CLASS }}/{{ VIEW_CLASS }}.js"></script>
 {% endblock %}
 
 {% block content %}
 
 {% include 'includes/_search.html' %}
-
-<div class="row" ng-controller="SupplierListController">
+{{ request.view.func_name }}
+<div class="row" ng-controller="{{ VIEW_CONTROLLER }}">
     <div class="wide column">
         <table class="ui small table segment">
             <thead>
@@ -21,7 +21,7 @@
                 <tr data-ng-repeat="supplier in suppliers | filter:query">
                     <td>
                         <div class="ui circular label" style="background-color:<[ supplier.colour ]>"></div>
-                        <[ supplier.name ]>
+                        <a href="<[ supplier.absolute_url ]>"><[ supplier.name ]></a>
                     </td>
                     <td><[ supplier.email ]></td>
                     <td><[ supplier.score ]></td>

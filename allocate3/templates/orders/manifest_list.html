@@ -13,15 +13,15 @@
     <div class="wide column">
         <table class="ui small celled table segment">
             <thead>
-                <th>Code</th>
                 <th>Name</th>
-                <th>Weight</th>
+                <th>Date Created</th>
+                <th>Total Invoices</th>
             </thead>
             <tbody>
-                <tr data-ng-repeat="product in products | filter:query">
-                    <td><a href="<[ product.absolute_url ]>"><[ product.code ]></a></td>
-                    <td><[ product.name ]></td>
-                    <td><[ product.weight ]></td>
+                <tr data-ng-repeat="manifest in manifests | filter:query">
+                    <td><[ manifest.name ]></a></td>
+                    <td><[ manifest.date_created ]></td>
+                    <td><[ manifest.total_invoices ]></td>
                 </tr>
             </tbody>
         </table>

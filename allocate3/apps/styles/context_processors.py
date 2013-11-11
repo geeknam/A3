@@ -21,7 +21,6 @@ def styles_classes(request):
     """
 
     app_class, view_class = create_classes_from_request(request)
-
     if request.is_secure():
         ext = 'ssl.css'
     else:
@@ -37,10 +36,6 @@ def styles_classes(request):
         'STYLES': STYLES,
         'APP_CLASS': app_class,
         'VIEW_CLASS': view_class,
-        'GLOBAL_ID': '%s_view' % view_class,
-        'GLOBAL_CLASSNAMES': '%s_app %s_view' % (
-            app_class,
-            view_class
-        )
+        'VIEW_CONTROLLER': '%sController' % request.view.func_name[:-4] if hasattr(request, 'view') else None
     }
 
