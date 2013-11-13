@@ -1,0 +1,12 @@
+{% if request.breadcrumbs %}
+<div class="ui breadcrumb">
+    {% for breadcrumb in request.breadcrumbs %}
+    {% if not forloop.last %}
+        <a class="section" href="{{ breadcrumb.url }}">{{ breadcrumb.name }}</a>
+        <i class="right arrow icon divider"></i>
+    {% else %}
+        <a class="active section" href="{{ breadcrumb.url }}">{{ breadcrumb.name }}</a>
+    {% endif %}
+    {% endfor %}
+</div>
+{% endif %}

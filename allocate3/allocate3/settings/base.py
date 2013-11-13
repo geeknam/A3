@@ -92,7 +92,7 @@ class BaseSettings(object):
         # 'core.middleware.LoginRequiredMiddleware',
         'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
         'styles.middleware.StylesMiddleware',
-        # 'breadcrumbs.middleware.BreadcrumbsMiddleware',
+        'breadcrumbs.middleware.BreadcrumbsMiddleware',
     ]
 
     KEEP_COMMENTS_ON_MINIFYING = True
@@ -131,7 +131,7 @@ class BaseSettings(object):
         'south',
         # 'djcelery',
         # 'treemenus',
-        # 'breadcrumbs',
+        'breadcrumbs',
         # 'imagekit',
         # 'compressor',
         'django_extensions',

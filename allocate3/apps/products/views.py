@@ -1,5 +1,5 @@
 from django.views.generic import DetailView, TemplateView
-
+from core.views import BreadcrumbsMixin
 from rest_framework import viewsets
 
 from .models import Product
@@ -7,7 +7,7 @@ from .serializers import ProductSerializer
 from rest_framework import filters
 
 
-class ProductListView(TemplateView):
+class ProductListView(BreadcrumbsMixin, TemplateView):
     template_name = 'products/product_list.html'
 
 

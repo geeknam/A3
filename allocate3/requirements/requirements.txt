@@ -1,4 +1,4 @@
-Django==1.5.5
+Django==1.6
 South==0.8.2
 
 # Database
@@ -26,5 +26,5 @@ django-countries==1.2
 
 
 # Development
-django=debug-toolbar
+django-debug-toolbar
 django-nose

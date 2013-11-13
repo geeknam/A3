@@ -12,6 +12,10 @@ VIEW_STYLES_MAP = {
         'app_class': 'suppliers',
         'view_class': 'supplier_list'
     },
+    'SupplierDetailView': {
+        'app_class': 'suppliers',
+        'view_class': 'supplier_detail'
+    },
     'ManifestListView': {
         'app_class': 'orders',
         'view_class': 'manifest_list'
