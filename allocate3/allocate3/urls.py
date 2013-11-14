@@ -5,9 +5,9 @@ from django.contrib import admin
 from rest_framework import routers
 
 from core.views import CompanyViewSet
-from products.views import ProductViewSet
-from suppliers.views import SupplierViewSet
-from orders.views import ManifestViewSet, InvoiceViewSet, InvoiceLineViewSet
+from products.api import ProductViewSet
+from suppliers.api import SupplierViewSet
+from orders.api import ManifestViewSet, InvoiceViewSet, InvoiceLineViewSet
 
 admin.autodiscover()
 
