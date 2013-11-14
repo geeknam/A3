@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block content %}
+<div class="row">
+    <div class="wide column">
+
+    <form class="form-vertical" method="post" action="." enctype="multipart/form-data">
+    <div class="row-fluid">
+
+        <div class="{% block width %}span12{% endblock %}">
+        <div class="well">
+            {% block section_title %}{% endblock %}
+                {% for error in form.non_field_errors %}<span class="label label-important">ERROR</span> <strong>{{ error }}</strong><p />{% endfor %}
+                {% for field in form.visible_fields %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                        <label>
+                            <strong>{{ field.label }}</strong>
+                            {% if field.field.required %}
+                                &nbsp;&nbsp;<span class="label label-warning">Required</span>
+                            {% else %}
+                                &nbsp;&nbsp;<span class="label label-info">Optional</span>
+                            {% endif %}
+                        </label>
+                        {% ifequal field.name 'weight' %}
+                            <div class="input-append">
+                                {{ field }}<span class="add-on">kg</span>
+                            </div>
+                        {% else %}
+                            {{ field }}
+                        {% endifequal %}
+
+                        <span class="help-block">{{ field.help_text }}{% for error in field.errors %}<br /><span class="label label-important">ERROR</span> <strong>{{ error }}</strong>{% endfor %}</span>
+                        <br />
+                    </div>
+                {% endfor %}
+                {% block buttons %}
+                    {% if object %}
+                        <a class="btn" href="{{ object.get_absolute_url }}">Cancel</a>&nbsp;&nbsp;&nbsp;
+                    {% endif %}
+                    <button type="submit" class="btn btn-primary">Save</button>
+                {% endblock %}
+            {% for field in form.hidden_fields %}
+                {{ field }}{{ field.errors }}
+            {% endfor %}
+                {% csrf_token %}
+
+        </div></div>
+        {% block extra %}
+        {% endblock %}
+    </div>
+    </form>
+    </div>
+</div>
+
+{% endblock %}
