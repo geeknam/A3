@@ -1,9 +1,7 @@
 from django.views.generic import TemplateView, DetailView
 from core.views import BreadcrumbsMixin
-from rest_framework import viewsets
 
 from .models import Supplier
-from .serializers import SupplierSerializer
 
 
 class SupplierListView(TemplateView):
@@ -22,12 +20,3 @@ class SupplierDetailView(BreadcrumbsMixin, DetailView):
         return [
             (supplier.name, '')
         ]
-
-
-class SupplierViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows users to be viewed or edited.
-    """
-    queryset = Supplier.objects.all()
-    serializer_class = SupplierSerializer
-    paginate_by = 10

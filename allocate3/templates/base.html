@@ -46,6 +46,15 @@
         <a class="item">
             Payments  <span class="ui label">12</span>
         </a>
+        <div class="ui dropdown item">
+            <i class="users icon"></i> Account
+            <div class="menu">
+                <a class="item">Logged in as: {{ request.user.username }}</a>
+                <a class="item">Admin</a>
+                <a class="item" href="/orders/">Change Password</a>
+                <a class="item">Logout</a>
+            </div>
+        </div>
     </div>
 
     <div class="main container">
@@ -63,7 +72,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row breadcrumbs-menu">
                 <div class="wide column">
                     {% include 'includes/_breadcrumbs.html' %}
                 </div>
