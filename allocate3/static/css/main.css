@@ -40,6 +40,10 @@ body {
     z-index: 99999999;
 }
 
+.hide {
+    display: none;
+}
+
 .container {
     width: 960px;
     margin: auto;
@@ -55,5 +59,33 @@ body {
 
 .breadcrumbs-menu {
   margin-top: 0 !important;
+}
+
+ul#suggestions {
+    z-index: 99999999;
+    position: absolute;
+    top: 55px;
+    left: 488px !important;
+    width: 517px;
+    left: 300px;
+    border-radius: 3px;
+    background-color: #fff;
+    padding: 10px;
+    list-style-type: none;
+    box-shadow: inset 0 0 2px 2px white,0 1px 5px rgba(0, 0, 0, 0.3);
+    color: #b5b5b5;
+}
+
+ul#suggestions li {
+    padding: 5px;
+}
+
+ul#suggestions li a {
+    color: black;
+    font-size: 13px;
+}
+
+.highlighted a{
+    color: #08c !important;
 }
 
