@@ -23,6 +23,7 @@ redisco==0.1.4
 
 django-extensions
 django-countries==1.2
+django-breadcrumbs
 
 
 # Development

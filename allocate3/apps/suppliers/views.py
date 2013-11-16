@@ -4,7 +4,7 @@ from core.views import BreadcrumbsMixin
 from .models import Supplier
 
 
-class SupplierListView(TemplateView):
+class SupplierListView(BreadcrumbsMixin, TemplateView):
     template_name = 'suppliers/supplier_list.html'
 
 

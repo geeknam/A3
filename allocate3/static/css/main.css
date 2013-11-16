@@ -65,9 +65,8 @@ ul#suggestions {
     z-index: 99999999;
     position: absolute;
     top: 55px;
-    left: 488px !important;
+    left: 400px !important;
     width: 517px;
-    left: 300px;
     border-radius: 3px;
     background-color: #fff;
     padding: 10px;

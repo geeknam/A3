@@ -1,0 +1,26 @@
+{% load static %}
+<div class="three wide column">
+    <img src="{% static 'img/kogan-logo.png' %}">
+</div>
+<div class="one wide column"></div>
+<div class="nine wide column" style="padding-right: 0;">
+    <div class="ui fluid icon input">
+      <input type="text" id="site-search-box" placeholder="Search all the things..." ng-model="keyword" ng-change="search()" on-keyup-fn="handleKeypress">
+      <i class="search icon"></i>
+    </div>
+</div>
+<div class="three wide column">
+    <div class="ui selection dropdown">
+      <input type="hidden" name="search_type" value="<[ type ]>" >
+      <div class="default text">Invoices</div>
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        <div class="item" data-value="products">Products</div>
+      </div>
+    </div>
+</div>
+<ul id="suggestions" class="hide">
+    <li class="ng-cloak" ng-repeat="result in results">
+        <a href="<[ result.absolute_url ]>"><[ result.name ]></a>
+    </li>
+</ul>

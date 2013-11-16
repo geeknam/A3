@@ -21,76 +21,15 @@
   {% endblock %}
 </head>
 <body>
-    <div class="ui black medium launch right attached button main-menu">
-        <i class="icon list layout"></i>
-    </div>
-
-    <div class="ui large inverted vertical floating sidebar menu">
-        <a class="active item" href="/">
-            Home
-        </a>
-        <a class="item" href="/products/">
-            Products
-        </a>
-        <a class="item" href="/suppliers/">
-            Suppliers
-        </a>
-        <div class="ui dropdown item">
-            <i class="add icon"></i> Orders
-            <div class="menu">
-                <a class="item" href="/orders/create/">Create New Manifest</a>
-                <a class="item" href="/orders/">View All Manifests</a>
-                <a class="item">Unshipped Orders</a>
-            </div>
-        </div>
-        <a class="item">
-            Payments  <span class="ui label">12</span>
-        </a>
-        <div class="ui dropdown item">
-            <i class="users icon"></i> Account
-            <div class="menu">
-                <a class="item">Logged in as: {{ request.user.username }}</a>
-                <a class="item">Admin</a>
-                <a class="item" href="/orders/">Change Password</a>
-                <a class="item">Logout</a>
-            </div>
-        </div>
-    </div>
+    {% include 'includes/_sidebar_menu.html'%}
 
     <div class="main container">
-
-        <div class="ui grid" ng-controller="SearchController">
-            <div class="row logo">
-                <div class="three wide column">
-                    <img src="{% static 'img/kogan-logo.png' %}">
-                </div>
-                <div class="one wide column"></div>
-                <div class="nine wide column" style="padding-right: 0;">
-                    <div class="ui fluid icon input">
-                      <input type="text" id="site-search-box" placeholder="Search all the things..." ng-model="keyword" ng-change="search()" on-keyup-fn="handleKeypress">
-                      <i class="search icon"></i>
-                    </div>
-                </div>
-                <div class="three wide column">
-                    <div class="ui selection dropdown">
-                      <input type="hidden" name="search_type" value="<[ type ]>" >
-                      <div class="default text">Invoices</div>
-                      <i class="dropdown icon"></i>
-                      <div class="menu">
-                        <div class="item" data-value="products">Products</div>
-                      </div>
-                    </div>
-                </div>
+        <div class="ui grid">
+            <div class="row logo" ng-controller="SearchController">
+                {% include 'includes/_top_menu.html' %}
             </div>
-            <ul id="suggestions" class="hide">
-                <li class="ng-cloak" ng-repeat="result in results">
-                    <a href="<[ result.absolute_url ]>"><[ result.name ]></a>
-                </li>
-            </ul>
             <div class="row breadcrumbs-menu">
-                <div class="wide column">
-                    {% include 'includes/_breadcrumbs.html' %}
-                </div>
+                {% include 'includes/_breadcrumbs.html' %}
             </div>
             {% block content %}
             {% endblock %}

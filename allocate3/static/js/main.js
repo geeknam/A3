@@ -62,9 +62,11 @@ function SearchController($scope, $http) {
     $scope.handleKeypress = function(evt){
         evt.preventDefault();
         var $highlighted = $suggestions.find('.highlighted:first');
-        console.log(evt.keyCode);
-        if(([13, 38, 40]).indexOf(evt.keyCode, true) == -1) return true;
+        if(([13, 38, 40]).indexOf(evt.keyCode) == -1) return true;
         switch(evt.keyCode){
+            case 13:
+                window.location = $highlighted.find('a').attr('href');
+                break;
             case 40:
                 if($highlighted.length){
                     var next = $highlighted.removeClass('highlighted').next();
@@ -88,11 +90,6 @@ function SearchController($scope, $http) {
                     last.addClass('highlighted');
                     $search_box.val(last.find('a').text());
                 }
-                break;
-            case 13:
-                var last = $suggestions.find('li:last');
-                console.log(last.find('a').attr('href'));
-                window.location = $search_box.val(last.find('a').attr('href'));
                 break;
         }
     };

@@ -1,0 +1,35 @@
+<div class="ui black medium launch right attached button main-menu">
+    <i class="icon list layout"></i>
+</div>
+
+<div class="ui large inverted vertical floating sidebar menu">
+    <a class="active item" href="/">
+        Home
+    </a>
+    <a class="item" href="/products/">
+        Products
+    </a>
+    <a class="item" href="/suppliers/">
+        Suppliers
+    </a>
+    <div class="ui dropdown item">
+        <i class="add icon"></i> Orders
+        <div class="menu">
+            <a class="item" href="/orders/create/">Create New Manifest</a>
+            <a class="item" href="/orders/">View All Manifests</a>
+            <a class="item">Unshipped Orders</a>
+        </div>
+    </div>
+    <a class="item">
+        Payments  <span class="ui label">12</span>
+    </a>
+    <div class="ui dropdown item">
+        <i class="users icon"></i> Account
+        <div class="menu">
+            <a class="item">Logged in as: {{ request.user.username }}</a>
+            <a class="item">Admin</a>
+            <a class="item" href="/orders/">Change Password</a>
+            <a class="item">Logout</a>
+        </div>
+    </div>
+</div>
